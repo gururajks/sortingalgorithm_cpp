@@ -60,7 +60,10 @@ namespace SortingAlgorithms {
   class BubbleSort : public Sort
   {
   public:
-	
+	void implementSort()
+	{
+
+	}
 
   };
 
