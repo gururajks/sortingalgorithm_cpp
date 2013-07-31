@@ -2,25 +2,24 @@
 
 #pragma once
 
+#include<iostream>
+#include<string>
 #include "Data.h";
 
-namespace SortingAlgorithms {
+using namespace std;
 
-  template<class Data>
+namespace SortingAlgorithms {
+    
   class Sort 
   {
-	Data _dataArray[];
+  protected:
+	static const int ARRAY_SIZE = 10000;
+	int *_dataArray;
 	int _size;
   public:
+	
 
-	//Default Constructor
-	Sort(Data data[], int size)
-	{
-	  _dataArray = data;
-	  this->_size = size;
-	}	
-
-	Data[] getSortedData() 
+	int* getSortedData() 
 	{
 	  return _dataArray;
 	}
@@ -32,14 +31,14 @@ namespace SortingAlgorithms {
 
   };
 
-  template<class Data>
+  
   class QuickSort
   {
 
 
   };
 
-  template<class Data>
+  
   class MergeSort
   {
 
@@ -47,7 +46,7 @@ namespace SortingAlgorithms {
 
   };
 
-  template<class Data>
+  
   class HeapSort
   {
 
@@ -56,19 +55,19 @@ namespace SortingAlgorithms {
   };
 
 
-  template<class Data>
+  
   class BubbleSort : public Sort
   {
   public:
-	void implementSort()
-	{
-
-	}
-
+	//Default Constructor
+	BubbleSort(int data[], int size);
+	
+	void implementSort();
+	
   };
 
 
-  template<class Data>
+  
   class InsertionSort
   {
 
@@ -78,7 +77,7 @@ namespace SortingAlgorithms {
   };
 
 
-  template<class Data>
+  
   class SelectionSort 
   {
 

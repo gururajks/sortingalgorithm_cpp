@@ -17,6 +17,9 @@ int main()
 	}
   }
 
+  SortingAlgorithms::BubbleSort *bubbleSort = new SortingAlgorithms::BubbleSort(numberArray, count);
+  bubbleSort->implementSort();
+
   istream.close();
 
  
