@@ -5,6 +5,7 @@
 #include<iostream>
 #include<string>
 #include "Data.h";
+#define DllExport   __declspec( dllexport ) 
 
 using namespace std;
 
@@ -56,7 +57,7 @@ namespace SortingAlgorithms {
 
 
   
-  class BubbleSort : public Sort
+  class __declspec(dllexport) BubbleSort : public Sort
   {
   public:
 	//Default Constructor
@@ -66,6 +67,7 @@ namespace SortingAlgorithms {
 	
   };
 
+  
 
   
   class InsertionSort

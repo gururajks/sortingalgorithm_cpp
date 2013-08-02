@@ -5,20 +5,20 @@
 
 namespace SortingAlgorithms
 {
-
-  BubbleSort::BubbleSort(int data[], int size)
-  {
+  
+  __declspec(dllexport) BubbleSort::BubbleSort(int *data, int size)
+  {	
 	_dataArray = data;
-	this->_size = size;
+	_size = size;
   }	
 
-  void BubbleSort::implementSort() 
+  __declspec(dllexport) void BubbleSort::implementSort() 
   {
-	for(int i = 0; i < _size; i++) 
-	{
-	  std::cout<<_dataArray[i]<<endl;
-	}
+	int noSwap = 0;
+
+	
   }
+
 
 
 

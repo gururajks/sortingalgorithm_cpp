@@ -1,6 +1,8 @@
 
 #include "AppMain.h"
 
+#include "../SortingAlgorithms/SortingAlgorithms.h"
+
 int main() 
 {
   char line[100];
@@ -13,8 +15,7 @@ int main()
 	while(!istream.eof())
 	{
 	  istream>>line;
-	  numberArray[count] = (int) line;
-	  cout<<line;
+	  numberArray[count] = atoi(line);
 	  count++;
 	}
   }
