@@ -20,9 +20,13 @@ int main()
 	}
   }
 
-  SortingAlgorithms::BubbleSort *bubbleSort = new SortingAlgorithms::BubbleSort(numberArray, count);
-  SortingAlgorithms::Sort *sortedArray = bubbleSort;
+  SortingAlgorithms::InsertionSort *insertSort = new SortingAlgorithms::InsertionSort(numberArray, count);
+  SortingAlgorithms::Sort *sortedArray = insertSort;
   sortedArray->implementSort();
+  int* fullySortedArray = sortedArray->getSortedData();
+  for(int i = 0 ; i < count; i++) {
+	cout<<fullySortedArray[i]<<endl;
+  }
 
   istream.close();
 

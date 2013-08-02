@@ -5,13 +5,13 @@
 #include<iostream>
 #include<string>
 #include "Data.h";
-#define DllExport   __declspec( dllexport ) 
+#define DllExport __declspec( dllexport ) 
 
 using namespace std;
 
 namespace SortingAlgorithms {
     
-  class Sort 
+  class DllExport Sort 
   {
   protected:
 	static const int ARRAY_SIZE = 10000;
@@ -33,14 +33,14 @@ namespace SortingAlgorithms {
   };
 
   
-  class QuickSort
+  class DllExport QuickSort
   {
 
 
   };
 
   
-  class MergeSort
+  class DllExport MergeSort
   {
 
 
@@ -48,7 +48,7 @@ namespace SortingAlgorithms {
   };
 
   
-  class HeapSort
+  class DllExport HeapSort
   {
 
 
@@ -57,8 +57,9 @@ namespace SortingAlgorithms {
 
 
   
-  class __declspec(dllexport) BubbleSort : public Sort
+  class DllExport BubbleSort : public Sort
   {
+	void swapArrays(int &, int &);
   public:
 	//Default Constructor
 	BubbleSort(int data[], int size);
@@ -70,17 +71,17 @@ namespace SortingAlgorithms {
   
 
   
-  class InsertionSort
+  class DllExport InsertionSort : public Sort
   {
-
-
-
+  public:
+	InsertionSort(int data[], int size);
+	void implementSort();
 
   };
 
 
   
-  class SelectionSort 
+  class DllExport SelectionSort 
   {
 
 
