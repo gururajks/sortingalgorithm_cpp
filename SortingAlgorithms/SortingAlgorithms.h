@@ -17,8 +17,12 @@ namespace SortingAlgorithms {
 	static const int ARRAY_SIZE = 10000;
 	int *_dataArray;
 	int _size;
+	void swapArrays(int &, int &);
   public:
 	
+	long startStopWatch();
+	long endStopWatch();
+	long getProcessDuration();
 
 	int* getSortedData() 
 	{
@@ -59,7 +63,7 @@ namespace SortingAlgorithms {
   
   class DllExport BubbleSort : public Sort
   {
-	void swapArrays(int &, int &);
+	
   public:
 	//Default Constructor
 	BubbleSort(int data[], int size);
@@ -81,10 +85,11 @@ namespace SortingAlgorithms {
 
 
   
-  class DllExport SelectionSort 
+  class DllExport SelectionSort : public Sort
   {
-
-
+  public:
+	SelectionSort(int data[], int size);
+	void implementSort();
 
   };
 

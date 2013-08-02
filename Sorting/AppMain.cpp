@@ -20,7 +20,7 @@ int main()
 	}
   }
 
-  SortingAlgorithms::InsertionSort *insertSort = new SortingAlgorithms::InsertionSort(numberArray, count);
+  SortingAlgorithms::SelectionSort *insertSort = new SortingAlgorithms::SelectionSort(numberArray, count);
   SortingAlgorithms::Sort *sortedArray = insertSort;
   sortedArray->implementSort();
   int* fullySortedArray = sortedArray->getSortedData();

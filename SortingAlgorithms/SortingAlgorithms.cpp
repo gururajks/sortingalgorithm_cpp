@@ -5,6 +5,14 @@
 
 namespace SortingAlgorithms
 {
+  /********************CLass Sort ***********************/
+  void Sort::swapArrays(int &left, int &right) 
+  {
+	int temp = left;
+	left = right;
+	right = temp;
+  }
+
   /********************CLass Bubble Sort ***********************/
   BubbleSort::BubbleSort(int *data, int size)
   {	
@@ -29,12 +37,6 @@ namespace SortingAlgorithms
 	}	
   }
 
-  void BubbleSort::swapArrays(int &left, int &right) 
-  {
-	int temp = left;
-	left = right;
-	right = temp;
-  }
 
   /***************************************************************/
 
@@ -60,6 +62,54 @@ namespace SortingAlgorithms
 	  _dataArray[indexPos] = valueToBeInserted;
 	}
   }
+
+  /***************************************************************/
+  /********************CLass Selection Sort **********************/
+
+  SelectionSort::SelectionSort(int *dataArray, int size)
+  {
+	_dataArray = dataArray;
+	_size = size;
+  }
+
+  void SelectionSort::implementSort() 
+  {
+	for(int i = 0 ; i < _size; i++)
+	{
+	  for(int j = i+1 ; j < _size; j++)
+	  {
+		if(_dataArray[i] > _dataArray[j]) 
+		{
+		  swapArrays(_dataArray[i], _dataArray[j]);
+		}
+	  }
+	}
+  }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /***************************************************************/
 
