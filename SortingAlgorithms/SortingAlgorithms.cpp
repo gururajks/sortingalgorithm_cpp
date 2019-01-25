@@ -2,6 +2,8 @@
 
 #include "stdafx.h"
 #include "SortingAlgorithms.h"
+#include <ctime>
+
 
 namespace SortingAlgorithms
 {
@@ -13,14 +15,16 @@ namespace SortingAlgorithms
 	right = temp;
   }
 
-  /********************CLass Bubble Sort ***********************/
-  BubbleSort::BubbleSort(int *data, int size)
-  {	
-	_dataArray = data;
-	_size = size;
-  }	
 
-  void BubbleSort::implementSort() 
+  /********************CLass Bubble Sort ***********************/
+ 
+  BubbleSort::BubbleSort(int data[], int size)
+  {
+      m_dataArray = data;
+      _size = size;
+  }
+
+  void BubbleSort::implementSort()
   {
 	int noSwap = 0;
 	while(noSwap == 0) 
@@ -28,9 +32,9 @@ namespace SortingAlgorithms
 	  noSwap = 1;
 	  for(int i = 0 ; i < _size-1; i++) 
 	  {
-		if(_dataArray[i] > _dataArray[i+1]) 
+		if(m_dataArray[i] > m_dataArray[i+1]) 
 		{
-		  swapArrays(_dataArray[i], _dataArray[i+1]);
+		  swapArrays(m_dataArray[i], m_dataArray[i+1]);
 		  noSwap = 0;
 		}
 	  }
@@ -42,33 +46,35 @@ namespace SortingAlgorithms
 
   /********************CLass Insertion Sort ***********************/
 
-  InsertionSort::InsertionSort(int *dataArray, int size)
+
+
+  InsertionSort::InsertionSort(int data[], int size)
   {
-	_dataArray = dataArray;
-	_size = size;
+      m_dataArray = data;
+      _size = size;
   }
 
-  void InsertionSort::implementSort() 
+  void InsertionSort::implementSort()
   {
 	for(int i = 1; i < _size; i++) 
 	{
-	  int valueToBeInserted = _dataArray[i];
+	  int valueToBeInserted = m_dataArray[i];
 	  int indexPos = i;
-	  while(indexPos > 0 && valueToBeInserted < _dataArray[indexPos-1]) 
+	  while(indexPos > 0 && valueToBeInserted < m_dataArray[indexPos-1]) 
 	  {
-		_dataArray[indexPos] = _dataArray[indexPos-1];
+		m_dataArray[indexPos] = m_dataArray[indexPos-1];
 		indexPos = indexPos - 1;
 	  }
-	  _dataArray[indexPos] = valueToBeInserted;
+	  m_dataArray[indexPos] = valueToBeInserted;
 	}
   }
 
   /***************************************************************/
   /********************CLass Selection Sort **********************/
 
-  SelectionSort::SelectionSort(int *dataArray, int size)
+  SelectionSort::SelectionSort(int dataArray[], int size)
   {
-	_dataArray = dataArray;
+	m_dataArray = dataArray;
 	_size = size;
   }
 
@@ -78,9 +84,9 @@ namespace SortingAlgorithms
 	{
 	  for(int j = i+1 ; j < _size; j++)
 	  {
-		if(_dataArray[i] > _dataArray[j]) 
+		if(m_dataArray[i] > m_dataArray[j]) 
 		{
-		  swapArrays(_dataArray[i], _dataArray[j]);
+		  swapArrays(m_dataArray[i], m_dataArray[j]);
 		}
 	  }
 	}
@@ -112,6 +118,46 @@ namespace SortingAlgorithms
 
 
   /***************************************************************/
+
+  QuickSort::QuickSort(int data[], int size)
+  {
+  }
+
+  void QuickSort::implementSort()
+  {
+  }
+
+  MergeSort::MergeSort(int data[], int size)
+  {
+  }
+
+  void MergeSort::implementSort()
+  {
+  }
+
+  BucketSort::BucketSort(int data[], int size)
+  {
+  }
+
+  void BucketSort::implementSort()
+  {
+  }
+
+  HeapSort::HeapSort(int data[], int size)
+  {
+  }
+
+  void HeapSort::implementSort()
+  {
+  }
+  
+  RadixSort::RadixSort(int data[], int size)
+  {
+  }
+
+  void RadixSort::implementSort()
+  {
+  }
 
 }
 

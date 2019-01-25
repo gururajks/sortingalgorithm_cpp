@@ -1,6 +1,6 @@
 
 #include "AppMain.h"
-
+#include "../SortingAlgorithms/Utils.h"
 #include "../SortingAlgorithms/SortingAlgorithms.h"
 
 int main() 
@@ -9,7 +9,7 @@ int main()
   int count = 0;
   int *numberArray = new int[10000];
   ifstream istream;
-  istream.open("C:/Users/gururajks/Documents/Visual Studio 2010/QuickSort.txt");
+  istream.open("E:/sortingalgorithm_cpp/QuickSort.txt");
   if(istream.is_open())
   {
 	while(!istream.eof())
@@ -19,17 +19,22 @@ int main()
 	  count++;
 	}
   }
-
-  SortingAlgorithms::SelectionSort *insertSort = new SortingAlgorithms::SelectionSort(numberArray, count);
-  SortingAlgorithms::Sort *sortedArray = insertSort;
+  
+  utils::Utils clockUtil;
+  clockUtil.startStopWatch();
+  SortingAlgorithms::Sort *sortedArray = new SortingAlgorithms::SelectionSort(numberArray, count);
   sortedArray->implementSort();
-  int* fullySortedArray = sortedArray->getSortedData();
-  for(int i = 0 ; i < count; i++) {
-	cout<<fullySortedArray[i]<<endl;
-  }
+  clockUtil.endStopWatch();
+  std::cout << clockUtil.getProcessDuration();
+  //int* fullySortedArray = sortedArray->getSortedData();
+   
+  // for(int i = 0 ; i < count; i++) {
+	//cout<<fullySortedArray[i]<<endl;
+ // }
 
   istream.close();
 
+  delete sortedArray;
   return 0;
 
 }
