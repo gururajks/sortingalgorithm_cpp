@@ -11,19 +11,24 @@ using namespace std;
 
 namespace SortingAlgorithms {
 
+    template <class T>
     class DllExport Sort
     {
     protected:
         static const int ARRAY_SIZE = 10000;
-        int *m_dataArray;
+        T *m_dataArray;
         int m_size;
-        void swapArrays(int &, int &);
+        void swapArrays(T &, T &);
     public:
+        Sort()
+        {
+        }
+
         virtual ~Sort()
         {
             delete[] m_dataArray;
         }
-        inline int* getSortedData()
+        inline T* getSortedData()
         {
             return m_dataArray;
         }
@@ -32,23 +37,23 @@ namespace SortingAlgorithms {
         virtual void implementSort() = 0;
     };
 
-
-    class DllExport QuickSort : public Sort
+    template <class T>
+    class DllExport QuickSort : public Sort<T>
     {
     public:
         //Default Constructor
-        QuickSort(int data[], int size);
+        QuickSort(T data[], int size);
 
         virtual void implementSort() override;
     
     };
 
-
-    class DllExport MergeSort : public Sort
+    template <class T>
+    class DllExport MergeSort : public Sort<T>
     {
     public:
         //Default Constructor
-        MergeSort(int data[], int size);
+        MergeSort(T data[], int size);
 
         virtual void implementSort() override;
     protected:
@@ -58,44 +63,46 @@ namespace SortingAlgorithms {
         void merge(int begin, int end);
     };
 
-
-    class DllExport HeapSort : public Sort
+    template <class T>
+    class DllExport HeapSort : public Sort<T>
     {
     public:
         //Default Constructor
-        HeapSort(int data[], int size);
+        HeapSort(T data[], int size);
 
         void implementSort() override;
 
 
     };
 
-    class DllExport BucketSort : public Sort
+    template <class T>
+    class DllExport BucketSort : public Sort<T>
     {
     public:
         //Default Constructor
-        BucketSort(int data[], int size);
+        BucketSort(T data[], int size);
 
         void implementSort() override;
     };
 
-    class DllExport RadixSort : public Sort
+    template <class T>
+    class DllExport RadixSort : public Sort<T>
     {
     public:
         //Default Constructor
-        RadixSort(int data[], int size);
+        RadixSort(T data[], int size);
 
         void implementSort() override;
     };
 
 
-
-    class DllExport BubbleSort : public Sort
+    template <class T>
+    class DllExport BubbleSort : public Sort<T>
     {
 
     public:
         //Default Constructor
-        BubbleSort(int data[], int size);
+        BubbleSort(T data[], int size);
 
         void implementSort() override;
 
@@ -103,21 +110,21 @@ namespace SortingAlgorithms {
 
 
 
-
-    class DllExport InsertionSort : public Sort
+    template <class T>
+    class DllExport InsertionSort : public Sort<T>
     {
     public:
-        InsertionSort(int data[], int size);
+        InsertionSort(T data[], int size);
         void implementSort() override;
 
     };
 
 
-
-    class DllExport SelectionSort : public Sort
+    template <class T>
+    class DllExport SelectionSort : public Sort<T>
     {
     public:
-        SelectionSort(int data[], int size);
+        SelectionSort(T data[], int size);
         void implementSort() override;
 
     };

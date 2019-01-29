@@ -23,7 +23,7 @@ int main()
   
   utils::Utils clockUtil;
   clockUtil.startStopWatch();
-  std::unique_ptr<SortingAlgorithms::Sort> sortedArray = std::make_unique<SortingAlgorithms::SelectionSort>(numberArray, count);
+  std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::SelectionSort>(numberArray, count);
   sortedArray->implementSort();
   clockUtil.endStopWatch();
   std::cout << clockUtil.getProcessDuration();

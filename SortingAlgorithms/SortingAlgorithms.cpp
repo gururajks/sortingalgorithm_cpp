@@ -7,97 +7,94 @@
 
 namespace SortingAlgorithms
 {
-  /********************CLass Sort ***********************/
-  void Sort::swapArrays(int &left, int &right) 
-  {
-	int temp = left;
-	left = right;
-	right = temp;
-  }
+    /********************CLass Sort ***********************/
+    template <class T>
+    void Sort<T>::swapArrays(T &left, T &right)
+    {
+        T temp = left;
+        left = right;
+        right = temp;
+    }
 
 
-  /********************CLass Bubble Sort ***********************/
- 
-  BubbleSort::BubbleSort(int data[], int size)
-  {
-      m_dataArray = data;
-      m_size = size;
-  }
+    /********************CLass Bubble Sort ***********************/
+    template <class T>
+    BubbleSort<T>::BubbleSort(T data[], int size)
+    {
+        m_dataArray = data;
+        m_size = size;
+    }
 
-  void BubbleSort::implementSort()
-  {
-	int noSwap = 0;
-	while(noSwap == 0) 
-	{
-	  noSwap = 1;
-	  for(int i = 0 ; i < m_size-1; i++) 
-	  {
-		if(m_dataArray[i] > m_dataArray[i+1]) 
-		{
-		  swapArrays(m_dataArray[i], m_dataArray[i+1]);
-		  noSwap = 0;
-		}
-	  }
-	}	
-  }
-
-
-  /***************************************************************/
-
-  /********************CLass Insertion Sort ***********************/
+    template <class T>
+    void BubbleSort<T>::implementSort()
+    {
+        int noSwap = 0;
+        while (noSwap == 0)
+        {
+            noSwap = 1;
+            for (int i = 0; i < m_size - 1; i++)
+            {
+                if (m_dataArray[i] > m_dataArray[i + 1])
+                {
+                    swapArrays(m_dataArray[i], m_dataArray[i + 1]);
+                    noSwap = 0;
+                }
+            }
+        }
+    }
 
 
+    /***************************************************************/
 
-  InsertionSort::InsertionSort(int data[], int size)
-  {
-      m_dataArray = data;
-      m_size = size;
-  }
-
-  void InsertionSort::implementSort()
-  {
-	for(int i = 1; i < m_size; i++) 
-	{
-	  int valueToBeInserted = m_dataArray[i];
-	  int indexPos = i;
-	  while(indexPos > 0 && valueToBeInserted < m_dataArray[indexPos-1]) 
-	  {
-		m_dataArray[indexPos] = m_dataArray[indexPos-1];
-		indexPos = indexPos - 1;
-	  }
-	  m_dataArray[indexPos] = valueToBeInserted;
-	}
-  }
-
-  /***************************************************************/
-  /********************CLass Selection Sort **********************/
-
-  SelectionSort::SelectionSort(int dataArray[], int size)
-  {
-	m_dataArray = dataArray;
-	m_size = size;
-  }
-
-  void SelectionSort::implementSort() 
-  {
-	for(int i = 0 ; i < m_size; i++)
-	{
-	  for(int j = i+1 ; j < m_size; j++)
-	  {
-		if(m_dataArray[i] > m_dataArray[j]) 
-		{
-		  swapArrays(m_dataArray[i], m_dataArray[j]);
-		}
-	  }
-	}
-  }
+    /********************CLass Insertion Sort ***********************/
 
 
-  
+    template <class T>
+    InsertionSort<T>::InsertionSort(T data[], int size)
+    {
+        m_dataArray = data;
+        m_size = size;
+    }
 
+    template <class T>
+    void InsertionSort<T>::implementSort()
+    {
+        for (int i = 1; i < m_size; i++)
+        {
+            int valueToBeInserted = m_dataArray[i];
+            int indexPos = i;
+            while (indexPos > 0 && valueToBeInserted < m_dataArray[indexPos - 1])
+            {
+                m_dataArray[indexPos] = m_dataArray[indexPos - 1];
+                indexPos = indexPos - 1;
+            }
+            m_dataArray[indexPos] = valueToBeInserted;
+        }
+    }
 
+    /***************************************************************/
+    /********************CLass Selection Sort **********************/
+    template <class T>
+    SelectionSort<T>::SelectionSort(T dataArray[], int size)
+    {
+        m_dataArray = dataArray;
+        m_size = size;
+    }
 
-
+    template <class T>
+    void SelectionSort<T>::implementSort()
+    {
+        for (int i = 0; i < m_size; i++)
+        {
+            for (int j = i + 1; j < m_size; j++)
+            {
+                if (m_dataArray[i] > m_dataArray[j])
+                {
+                    swapArrays(m_dataArray[i], m_dataArray[j]);
+                }
+            }
+        }
+    }
 
 
 
@@ -117,38 +114,6 @@ namespace SortingAlgorithms
 
 
 
-  /***************************************************************/
-
-  MergeSort::MergeSort(int data[], int size)
-  {
-      m_dataArray = data;
-      m_size = size;
-  }
-
-  void MergeSort::implementSort()
-  {
-      mergeSort(0, m_size);
-  }
-
-  void MergeSort::mergeSort(int begin, int end)
-  {
-      int middle = (begin + end) / 2;
-
-      mergeSort(begin, middle);
-      mergeSort(middle + 1, end);
-
-      merge(begin, end);
-  }
-
-  void MergeSort::merge(int begin, int end)
-  {
-      
-
-
-
-
-
-  }
 
 
 
@@ -156,43 +121,92 @@ namespace SortingAlgorithms
 
 
 
-  QuickSort::QuickSort(int data[], int size)
-  {
-      m_dataArray = data;
-      m_size = size;
-  }
+    /***************************************************************/
+    template <class T>
+    MergeSort<T>::MergeSort(T data[], int size)
+    {
+        m_dataArray = data;
+        m_size = size;
+    }
 
-  void QuickSort::implementSort()
-  {
-  }
+    template <class T>
+    void MergeSort<T>::implementSort()
+    {
+        mergeSort(0, m_size);
+    }
 
-  BucketSort::BucketSort(int data[], int size)
-  {
-      m_dataArray = data;
-      m_size = size;
-  }
+    template <class T>
+    void MergeSort<T>::mergeSort(int begin, int end)
+    {
+        int middle = (begin + end) / 2;
 
-  void BucketSort::implementSort()
-  {
-  }
+        mergeSort(begin, middle);
+        mergeSort(middle + 1, end);
 
-  HeapSort::HeapSort(int data[], int size)
-  {
-      m_dataArray = data;
-      m_size = size;
-  }
+        merge(begin, end);
+    }
 
-  void HeapSort::implementSort()
-  {
-  }
-  
-  RadixSort::RadixSort(int data[], int size)
-  {
-  }
+    template <class T>
+    void MergeSort<T>::merge(int begin, int end)
+    {
 
-  void RadixSort::implementSort()
-  {
-  }
+
+
+
+
+
+    }
+
+
+
+
+
+
+    template <class T>
+    QuickSort<T>::QuickSort(T data[], int size)
+    {
+        m_dataArray = data;
+        m_size = size;
+    }
+
+    template <class T>
+    void QuickSort<T>::implementSort()
+    {
+    }
+
+    template <class T>
+    BucketSort<T>::BucketSort(T data[], int size)
+    {
+        m_dataArray = data;
+        m_size = size;
+    }
+
+    template <class T>
+    void BucketSort<T>::implementSort()
+    {
+    }
+
+    template <class T>
+    HeapSort<T>::HeapSort(T data[], int size)
+    {
+        m_dataArray = data;
+        m_size = size;
+    }
+
+    template <class T>
+    void HeapSort<T>::implementSort()
+    {
+    }
+
+    template <class T>
+    RadixSort<T>::RadixSort(T data[], int size)
+    {
+    }
+
+    template <class T>
+    void RadixSort<T>::implementSort()
+    {
+    }
 
 }
 
