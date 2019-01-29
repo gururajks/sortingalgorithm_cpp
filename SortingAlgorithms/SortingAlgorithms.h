@@ -16,7 +16,7 @@ namespace SortingAlgorithms {
     protected:
         static const int ARRAY_SIZE = 10000;
         int *m_dataArray;
-        int _size;
+        int m_size;
         void swapArrays(int &, int &);
     public:
         virtual ~Sort()
@@ -40,7 +40,7 @@ namespace SortingAlgorithms {
         QuickSort(int data[], int size);
 
         virtual void implementSort() override;
-
+    
     };
 
 
@@ -51,8 +51,11 @@ namespace SortingAlgorithms {
         MergeSort(int data[], int size);
 
         virtual void implementSort() override;
+    protected:
 
+        void mergeSort(int begin, int end);
 
+        void merge(int begin, int end);
     };
 
 

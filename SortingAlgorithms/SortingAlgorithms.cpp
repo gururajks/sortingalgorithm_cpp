@@ -21,7 +21,7 @@ namespace SortingAlgorithms
   BubbleSort::BubbleSort(int data[], int size)
   {
       m_dataArray = data;
-      _size = size;
+      m_size = size;
   }
 
   void BubbleSort::implementSort()
@@ -30,7 +30,7 @@ namespace SortingAlgorithms
 	while(noSwap == 0) 
 	{
 	  noSwap = 1;
-	  for(int i = 0 ; i < _size-1; i++) 
+	  for(int i = 0 ; i < m_size-1; i++) 
 	  {
 		if(m_dataArray[i] > m_dataArray[i+1]) 
 		{
@@ -51,12 +51,12 @@ namespace SortingAlgorithms
   InsertionSort::InsertionSort(int data[], int size)
   {
       m_dataArray = data;
-      _size = size;
+      m_size = size;
   }
 
   void InsertionSort::implementSort()
   {
-	for(int i = 1; i < _size; i++) 
+	for(int i = 1; i < m_size; i++) 
 	{
 	  int valueToBeInserted = m_dataArray[i];
 	  int indexPos = i;
@@ -75,14 +75,14 @@ namespace SortingAlgorithms
   SelectionSort::SelectionSort(int dataArray[], int size)
   {
 	m_dataArray = dataArray;
-	_size = size;
+	m_size = size;
   }
 
   void SelectionSort::implementSort() 
   {
-	for(int i = 0 ; i < _size; i++)
+	for(int i = 0 ; i < m_size; i++)
 	{
-	  for(int j = i+1 ; j < _size; j++)
+	  for(int j = i+1 ; j < m_size; j++)
 	  {
 		if(m_dataArray[i] > m_dataArray[j]) 
 		{
@@ -119,24 +119,57 @@ namespace SortingAlgorithms
 
   /***************************************************************/
 
+  MergeSort::MergeSort(int data[], int size)
+  {
+      m_dataArray = data;
+      m_size = size;
+  }
+
+  void MergeSort::implementSort()
+  {
+      mergeSort(0, m_size);
+  }
+
+  void MergeSort::mergeSort(int begin, int end)
+  {
+      int middle = (begin + end) / 2;
+
+      mergeSort(begin, middle);
+      mergeSort(middle + 1, end);
+
+      merge(begin, end);
+  }
+
+  void MergeSort::merge(int begin, int end)
+  {
+      
+
+
+
+
+
+  }
+
+
+
+
+
+
+
   QuickSort::QuickSort(int data[], int size)
   {
+      m_dataArray = data;
+      m_size = size;
   }
 
   void QuickSort::implementSort()
   {
   }
 
-  MergeSort::MergeSort(int data[], int size)
-  {
-  }
-
-  void MergeSort::implementSort()
-  {
-  }
-
   BucketSort::BucketSort(int data[], int size)
   {
+      m_dataArray = data;
+      m_size = size;
   }
 
   void BucketSort::implementSort()
@@ -145,6 +178,8 @@ namespace SortingAlgorithms
 
   HeapSort::HeapSort(int data[], int size)
   {
+      m_dataArray = data;
+      m_size = size;
   }
 
   void HeapSort::implementSort()
