@@ -3,6 +3,8 @@
 #include "../SortingAlgorithms/Utils.h"
 #include "../SortingAlgorithms/SortingAlgorithms.h"
 #include <memory>
+#include <ctime>
+#include <chrono>
 
 int main() 
 {
@@ -23,7 +25,7 @@ int main()
   
   utils::Utils clockUtil;
   clockUtil.startStopWatch();
-  std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::SelectionSort>(numberArray, count);
+  std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::SelectionSort<int>>(numberArray, count);
   sortedArray->implementSort();
   clockUtil.endStopWatch();
   std::cout << clockUtil.getProcessDuration();
