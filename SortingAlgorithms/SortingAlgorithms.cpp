@@ -16,6 +16,16 @@ namespace SortingAlgorithms
         right = temp;
     }
 
+	template <class T>
+	bool Sort<T>::checkSorted()
+	{
+		for (int i = 0; i < m_size - 1; i++)
+		{
+			if (m_dataArray[i + 1] < m_dataArray[i])
+				return false;
+		}
+	}
+
 
     /********************CLass Bubble Sort ***********************/
     template <class T>
@@ -138,22 +148,65 @@ namespace SortingAlgorithms
     template <class T>
     void MergeSort<T>::mergeSort(int begin, int end)
     {
+		if (end - begin < 2) return;
         int middle = (begin + end) / 2;
 
         mergeSort(begin, middle);
         mergeSort(middle + 1, end);
 
-        merge(begin, end);
+        merge(begin, middle, end);
     }
 
     template <class T>
-    void MergeSort<T>::merge(int begin, int end)
+    void MergeSort<T>::merge(int begin, int middle, int end)
     {
+		int leftArraySize = middle - begin + 1;
+		int rightArraySize = end - middle;
+		T* leftArray = new T[leftArraySize];
+		T* rightArray = new T[rightArraySize];
+		for (int i = 0; i < leftArraySize; i++)
+		{
+			leftArray[i] = m_dataArray[i + begin];
+		}
+		for (int i = 0; i < rightArraySize; i++)
+		{
+			rightArray[i] = m_dataArray[i + middle + 1];
+		}
 
+		int i = 0; 
+		int j = 0;
+		int k = begin;
+		while (i < leftArraySize && j < rightArraySize)
+		{
+			if (leftArray[i] < rightArray[j])
+			{
+				m_dataArray[k] = leftArray[i];
+				i++;
+			}
+			if (leftArray[i] > rightArray[j])
+			{
+				m_dataArray[k] = rightArray[j];
+				j++;
+			}
+			k++;
+		}
 
+		while (i < leftArraySize)
+		{
+			m_dataArray[k] = leftArray[i];
+			i++;
+			k++;
+		}
 
+		while (j < rightArraySize)
+		{
+			m_dataArray[k] = rightArray[j];
+			j++;
+			k++;
+		}
 
-
+		delete leftArray;
+		delete rightArray;
 
     }
 

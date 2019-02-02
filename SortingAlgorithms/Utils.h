@@ -1,10 +1,10 @@
 #pragma once
 #include <ctime>
 #include <chrono>
-
+#include "Data.h"
 namespace utils
 {
-    class __declspec(dllexport) Utils
+    class DllExport Utils
     {
     public:
         void startStopWatch();

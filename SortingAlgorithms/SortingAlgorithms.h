@@ -5,7 +5,7 @@
 #include<iostream>
 #include<string>
 #include "Data.h"
-#define DllExport __declspec( dllexport ) 
+
 
 using namespace std;
 
@@ -25,14 +25,14 @@ namespace SortingAlgorithms {
         }
 
         virtual ~Sort()
-        {
-            delete[] m_dataArray;
+        {           
         }
         inline T* getSortedData()
         {
             return m_dataArray;
         }
 
+		virtual bool checkSorted();
         //Virtual function for sorting , need to be implemented by inheriting classes
         virtual void implementSort() = 0;
     };
@@ -60,7 +60,7 @@ namespace SortingAlgorithms {
 
         void mergeSort(int begin, int end);
 
-        void merge(int begin, int end);
+        void merge(int begin, int middle , int end);
     };
 
     template <class T>
