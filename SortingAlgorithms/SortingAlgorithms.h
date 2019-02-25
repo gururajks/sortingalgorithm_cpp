@@ -11,6 +11,20 @@ using namespace std;
 
 namespace SortingAlgorithms {
 
+	class DllExport Data
+	{
+	public:
+		Data()
+		{
+			std::cout << "Data created" << std::endl;
+		}
+		~Data()
+		{
+			std::cout << "Data created" << std::endl;
+		}
+		int value;
+	};
+
     template <class T>
     class DllExport Sort
     {
@@ -45,7 +59,9 @@ namespace SortingAlgorithms {
         QuickSort(T data[], int size);
 
         virtual void implementSort() override;
-    
+	protected:
+		int partition(int low, int high);
+		void quickSort(int low, int high);
     };
 
     template <class T>

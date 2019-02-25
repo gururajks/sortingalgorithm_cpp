@@ -7,11 +7,13 @@
 #include <ctime>
 #include <chrono>
 
+
+
 int main()
 {
 	char line[100];
 	int count = 0;
-	int *numberArray = new int[10000];
+	int *numberArray = new int[11000];
 	ifstream istream;
 	istream.open("D:/sortingalgorithm_cpp/QuickSort.txt");
 	if (istream.is_open())
@@ -24,22 +26,29 @@ int main()
 		}
 	}
 
+	int *unArray = new int[5];
+	unArray[0] = 4;
+	unArray[1] = 3;
+	unArray[2] = 10;
+	unArray[3] = 6;
+	unArray[4] = 2;
+
 	utils::Utils clockUtil;
 	clockUtil.startStopWatch();
-	/*std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::MergeSort<int>>(numberArray, count);
-	sortedArray->implementSort();*/
-	SortingAlgorithms::Sort<int>* sortedArray = new SortingAlgorithms::SelectionSort<int>(numberArray, count);
+	std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::QuickSort<int>>(unArray, 5);
 	sortedArray->implementSort();
-
-	std::cout << sortedArray->checkSorted() << std::endl;
+	
+	for (int i = 0; i < 5; i++)
+	{
+		auto* sArray = sortedArray->getSortedData();
+		std::cout << sArray[i]<<std::endl;
+	}
 
 	clockUtil.endStopWatch();
 	std::cout << clockUtil.getProcessDuration();
 
 
 	istream.close();
-	delete sortedArray;
-	//delete[] numberArray;
 	
 	return 0;
 

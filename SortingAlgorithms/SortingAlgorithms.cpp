@@ -24,6 +24,7 @@ namespace SortingAlgorithms
 			if (m_dataArray[i + 1] < m_dataArray[i])
 				return false;
 		}
+		return true;
 	}
 
 
@@ -224,8 +225,38 @@ namespace SortingAlgorithms
 
     template <class T>
     void QuickSort<T>::implementSort()
-    {
+    {		
+		quickSort(0, m_size - 1);
     }
+
+
+
+	template <class T>
+	int QuickSort<T>::partition(int low, int high)
+	{
+		T pivot = m_dataArray[high];
+		int partitionIndex = low;
+		while (low < high)
+		{
+			if (m_dataArray[low] < m_dataArray[partitionIndex])
+			{
+				swapArrays(m_dataArray[low], m_dataArray[partitionIndex]);
+				partitionIndex++;
+			}
+			low++;
+		}
+		swap(m_dataArray[partitionIndex], m_dataArray[high]);
+		return partitionIndex;
+	}
+
+	template<class T>
+	void QuickSort<T>::quickSort(int low, int high)
+	{
+		if (low > high) return;
+		int pivot = partition(low, high);
+		quickSort(low, pivot - 1);
+		quickSort(pivot + 1, high);
+	}
 
     template <class T>
     BucketSort<T>::BucketSort(T data[], int size)
