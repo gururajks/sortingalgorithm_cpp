@@ -50,6 +50,7 @@ int main()
 
 	istream.close();
 	delete[] unArray;
+	system("pause");
 	return 0;
 
 }
