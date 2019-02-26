@@ -49,7 +49,7 @@ int main()
 
 
 	istream.close();
-	
+	delete[] unArray;
 	return 0;
 
 }
