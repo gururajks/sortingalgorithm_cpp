@@ -109,29 +109,6 @@ namespace SortingAlgorithms
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /***************************************************************/
     template <class T>
     MergeSort<T>::MergeSort(T data[], int size)
@@ -238,7 +215,7 @@ namespace SortingAlgorithms
 		int partitionIndex = low;
 		while (low < high)
 		{
-			if (m_dataArray[low] < m_dataArray[partitionIndex])
+			if (m_dataArray[low] < pivot)
 			{
 				swapArrays(m_dataArray[low], m_dataArray[partitionIndex]);
 				partitionIndex++;

@@ -25,20 +25,25 @@ int main()
 			count++;
 		}
 	}
-
-	int *unArray = new int[5];
+	
+	int *unArray = new int[8];
 	unArray[0] = 4;
 	unArray[1] = 3;
 	unArray[2] = 10;
 	unArray[3] = 6;
-	unArray[4] = 2;
+	unArray[4] = 12;
+	unArray[5] = 32;
+	unArray[6] = 442;
+	unArray[7] = 24;
+
+	int SIZE_ARRAY = 8;
 
 	utils::Utils clockUtil;
 	clockUtil.startStopWatch();
-	std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::QuickSort<int>>(unArray, 5);
+	std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::QuickSort<int>>(unArray, SIZE_ARRAY);
 	sortedArray->implementSort();
 	
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < SIZE_ARRAY; i++)
 	{
 		auto* sArray = sortedArray->getSortedData();
 		std::cout << sArray[i]<<std::endl;
