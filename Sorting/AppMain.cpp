@@ -6,10 +6,31 @@
 #include <memory>
 #include <ctime>
 #include <chrono>
+#include "List.h"
+#include "Tree.h"
 
 
+List<int>* createList(const vector<int>& arrayList)
+{
+	List<int>* root = nullptr;
+	List<int>* head = root;
+	for(auto i : arrayList)
+	{
+		if (!root)
+		{
+			List<int>* l = new List<int>(i);
+			l->next = nullptr;
+			root = l;
+			continue;
+		}
+		List<int>* l = new List<int>(i);
+		root->next = l;
+		root = l;
+	}
+	return head;
+}
 
-int main()
+void testSorting()
 {
 	char line[100];
 	int count = 0;
@@ -25,7 +46,6 @@ int main()
 			count++;
 		}
 	}
-	
 	int *unArray = new int[8];
 	unArray[0] = 4;
 	unArray[1] = 3;
@@ -40,21 +60,53 @@ int main()
 
 	utils::Utils clockUtil;
 	clockUtil.startStopWatch();
-	std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::QuickSort<int>>(unArray, SIZE_ARRAY);
+	std::unique_ptr<SortingAlgorithms::Sort<int>> sortedArray = std::make_unique<SortingAlgorithms::MergeSort<int>>(unArray, SIZE_ARRAY);
 	sortedArray->implementSort();
-	
+
 	for (int i = 0; i < SIZE_ARRAY; i++)
 	{
 		auto* sArray = sortedArray->getSortedData();
-		std::cout << sArray[i]<<std::endl;
+		std::cout << sArray[i] << std::endl;
 	}
 
 	clockUtil.endStopWatch();
 	std::cout << clockUtil.getProcessDuration();
-
-
 	istream.close();
 	delete[] unArray;
+
+}
+
+
+
+int main()
+{
+	vector<int> arrayList = { 3 , 4, 5, 6, 7,8 , 9, 10 , 334, 44 };
+	List<int>* root = createList(arrayList);
+	List<int>* head = root;
+	while (head)
+	{
+		cout << head->value << endl;
+		head = head->next;
+	}
+	
+	auto revL = ListAlgo<int>::reverseList(root);
+	while (revL)
+	{
+		cout << revL->value << endl;
+		revL = revL->next;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 	system("pause");
 	return 0;
 

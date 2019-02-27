@@ -1,21 +1,23 @@
 #pragma once
-
+#include "Data.h"
 #include <vector>
 
 template <class T>
-class Tree
+class DllExport Tree
 {
 public:
-	T id;
+	int id;
+	T value;
 	vector<T*> children;
 };
 
 
 template <class T>
-class BST
+class DllExport BST
 {
 public:
-	T id;
+	int id;
+	T value;
 	BST<T>* left;
 	BST<T*> right;
 };

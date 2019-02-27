@@ -183,8 +183,8 @@ namespace SortingAlgorithms
 			k++;
 		}
 
-		delete leftArray;
-		delete rightArray;
+		delete[] leftArray;
+		delete[] rightArray;
 
     }
 
