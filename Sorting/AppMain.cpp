@@ -8,6 +8,7 @@
 #include <chrono>
 #include "List.h"
 #include "Tree.h"
+#include "List/CircularList.cpp"
 
 
 List<int>* createList(const vector<int>& arrayList)
@@ -84,17 +85,15 @@ int main()
 	List<int>* root = createList(arrayList);
 	List<int>* head = root;
 	while (head)
-	{
-		cout << head->value << endl;
+	{		
 		head = head->next;
+		if (!head->next)
+		{
+			head->next = root;
+		}
 	}
 	
-	auto revL = ListAlgo<int>::reverseList(root);
-	while (revL)
-	{
-		cout << revL->value << endl;
-		revL = revL->next;
-	}
+	cout << circularList(root);
 
 
 
