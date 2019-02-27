@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Queue">
       <UniqueIdentifier>{be2ffecb-33a4-439c-9504-c184b2cd1234}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Array">
+      <UniqueIdentifier>{dbc6e756-aeaa-44b1-ab67-7c3143e2ead3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tree.h">
@@ -49,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="Graph\Dijstras.cpp">
       <Filter>Source Files\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Array\SmallestKNumbers.cpp">
+      <Filter>Source Files\Array</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
