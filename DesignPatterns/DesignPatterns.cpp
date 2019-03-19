@@ -33,12 +33,12 @@ void factoryExample()
 #include "DocumentBuilder.h"
 int main()
 {
-   
-
     unique_ptr<DocumentBuilder> db = make_unique<WordDocumentBuilder>();
     Folder f(db.get());
     Document* doc = db->getDocument();
-    cout << doc->slate;
+    cout << doc->slate << endl;
+    cout << doc->options << endl;
+    cout << doc->scrollbar << endl;
     
 
     return 0;

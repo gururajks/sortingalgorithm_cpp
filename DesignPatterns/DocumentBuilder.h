@@ -27,7 +27,8 @@ public:
 class DocumentBuilder
 {
 public:
-    Document* initializeDocument() { return nullptr; }
+    virtual void initializeDocument() { }
+    virtual ~DocumentBuilder() {}
     virtual void buildBlankSlate() {}
     virtual void buildScrollBar() {}
     virtual void buildOptions() {}
@@ -39,27 +40,29 @@ class WordDocumentBuilder : public DocumentBuilder
 {
 public:
 
-    void initializeDocument()
+    virtual void initializeDocument() override
     {
         doc = new ExcelDocument();
     }
-    virtual void buildBlankSlate()
+
+    virtual void buildBlankSlate() override
     {
         doc->slate = "Word";
     }
 
-    virtual void buildScrollBar()
+    virtual void buildScrollBar() override
     {
         doc->scrollbar = "word scroll built";
     }
 
-    virtual void buildOptions()
+    virtual void buildOptions() override
     {
         doc->options = "word options";
     }
 
-    virtual Document* getDocument() { return doc; }
+    virtual Document* getDocument() override  { return doc; }
 
+private:
     Document* doc;
 };
 
@@ -67,27 +70,28 @@ class ExcelDocumentBuilder : public DocumentBuilder
 {
 public:
 
-    void initializeDocument()
+    virtual void initializeDocument() override
     {
         doc = new ExcelDocument();
     }
-    virtual void buildBlankSlate() 
+    virtual void buildBlankSlate() override
     {
         doc->slate = "Excel";
     }
 
-    virtual void buildScrollBar() 
+    virtual void buildScrollBar() override
     {
         doc->scrollbar = "excel built";
     }
 
-    virtual void buildOptions() 
+    virtual void buildOptions() override
     {
         doc->options = "options";
     }
 
-    virtual Document* getDocument() { return doc; }
+    virtual Document* getDocument() override { return doc; }
 
+private:
     Document* doc;
 };
 
