@@ -3,15 +3,20 @@
 
 #include "pch.h"
 #include <iostream>
-#include "DocumentFactory.h"
 #include "Common.h"
 
-int main()
+#define BUILDER
+
+
+#ifdef FACTORY
+
+#include "DocumentFactory.h"
+void factoryExample()
 {
-    unique_ptr<DocumentFactory> df = make_unique<DocumentFactory>();
+    unique_ptr<DocumentFactory> df = make_unique<WordDocumentFactory>();
     try
     {
-        auto word = df->createNewDocument(3);
+        auto word = df->createNewDocument();
 
         word->newDoc();
         word->openDoc();
@@ -20,7 +25,22 @@ int main()
     {
         cout << e.what() << endl;
     }
+}
+#endif
+
+
+#ifdef BUILDER
+#include "DocumentBuilder.h"
+int main()
+{
+   
+
+    unique_ptr<DocumentBuilder> db = make_unique<WordDocumentBuilder>();
+    Folder f(db.get());
+    Document* doc = db->getDocument();
+    cout << doc->slate;
     
 
     return 0;
 }
+#endif

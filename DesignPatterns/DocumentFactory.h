@@ -24,19 +24,26 @@ class DocumentFactory
 {
 public:    
 
-    virtual Document* createNewDocument(int type) 
-    {
-        if (type == 1)
-        {
-            return new WordDocument();
-        }
-        if (type == 2)
-        {
-            return new ExcelDocument();
-        }
-        throw std::exception("Incorrect type");
-    }
-
+    virtual Document* createNewDocument() = 0;    
 private:
+};
+
+
+class WordDocumentFactory : public DocumentFactory
+{
+public:
+    virtual Document* createNewDocument()
+    {
+        return new WordDocument();
+    }
+};
+
+class ExcelDocumentFactory : public DocumentFactory
+{
+public:
+    virtual Document* createNewDocument()
+    {
+        return new ExcelDocument();
+    }
 };
 
