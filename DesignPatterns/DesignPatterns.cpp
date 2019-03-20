@@ -5,7 +5,6 @@
 #include <iostream>
 #include "Common.h"
 
-#define BUILDER
 
 
 #ifdef FACTORY
@@ -27,7 +26,6 @@ void factoryExample()
     }
 }
 #endif
-
 
 #ifdef BUILDER
 #include "DocumentBuilder.h"
