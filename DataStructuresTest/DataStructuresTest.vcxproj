@@ -47,6 +47,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DataStructures\DataStructures.vcxproj">
       <Project>{5d04b29d-6c9e-4136-ad84-b085bd0c8f59}</Project>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

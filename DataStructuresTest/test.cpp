@@ -4,6 +4,7 @@
 using namespace std;
 
 #include "../DataStructures/Array/SmallestKNumbers.cpp"
+#include "../DataStructures/Graph/BFS.cpp"
 
 TEST(DataStructuresTest, SmallestNumbers)
 {
@@ -13,4 +14,17 @@ TEST(DataStructuresTest, SmallestNumbers)
 	ASSERT_EQ(smallest[0], 1);
 	ASSERT_EQ(smallest[1], 3);
 	ASSERT_EQ(smallest[2], 4);
+}
+
+
+TEST(DataStructuresTest, BFS)
+{
+	vector<vector<int>> grid = { 
+		{3, 1, 6 },
+	    {1, 0, 1 },
+	    {1, 2, 2} };
+	
+	int cost = BFS(grid, 0, 0, 2, 2);
+	EXPECT_EQ(cost, 8);
+	
 }

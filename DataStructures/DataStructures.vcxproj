@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="Array\SmallestKNumbers.cpp" />
     <ClCompile Include="Graph\AStar.cpp" />
+    <ClCompile Include="Graph\BFS.cpp" />
     <ClCompile Include="Graph\Dijstras.cpp" />
     <ClCompile Include="List\CircularList.cpp" />
     <ClCompile Include="Tree\GetMaxPath.cpp" />

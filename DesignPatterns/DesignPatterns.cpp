@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Common.h"
 
+#define BUILDER
 
 
 #ifdef FACTORY

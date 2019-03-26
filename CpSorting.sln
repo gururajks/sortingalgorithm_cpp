@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataStructuresTest", "DataS
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DesignPatterns", "DesignPatterns\DesignPatterns.vcxproj", "{060D3ED2-A9C7-487E-BC6B-35F8194D85B4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObjectOriented", "ObjectOriented\ObjectOriented.vcxproj", "{35C05651-E525-4EC5-BC94-B6D889CB2933}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -61,6 +63,14 @@ Global
 		{060D3ED2-A9C7-487E-BC6B-35F8194D85B4}.Release|Win32.Build.0 = Release|Win32
 		{060D3ED2-A9C7-487E-BC6B-35F8194D85B4}.Release|x64.ActiveCfg = Release|x64
 		{060D3ED2-A9C7-487E-BC6B-35F8194D85B4}.Release|x64.Build.0 = Release|x64
+		{35C05651-E525-4EC5-BC94-B6D889CB2933}.Debug|Win32.ActiveCfg = Debug|Win32
+		{35C05651-E525-4EC5-BC94-B6D889CB2933}.Debug|Win32.Build.0 = Debug|Win32
+		{35C05651-E525-4EC5-BC94-B6D889CB2933}.Debug|x64.ActiveCfg = Debug|x64
+		{35C05651-E525-4EC5-BC94-B6D889CB2933}.Debug|x64.Build.0 = Debug|x64
+		{35C05651-E525-4EC5-BC94-B6D889CB2933}.Release|Win32.ActiveCfg = Release|Win32
+		{35C05651-E525-4EC5-BC94-B6D889CB2933}.Release|Win32.Build.0 = Release|Win32
+		{35C05651-E525-4EC5-BC94-B6D889CB2933}.Release|x64.ActiveCfg = Release|x64
+		{35C05651-E525-4EC5-BC94-B6D889CB2933}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

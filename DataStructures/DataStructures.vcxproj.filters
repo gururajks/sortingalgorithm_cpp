@@ -56,5 +56,8 @@
     <ClCompile Include="Array\SmallestKNumbers.cpp">
       <Filter>Source Files\Array</Filter>
     </ClCompile>
+    <ClCompile Include="Graph\BFS.cpp">
+      <Filter>Source Files\Graph</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
