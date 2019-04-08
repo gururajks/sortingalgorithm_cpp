@@ -41,7 +41,7 @@ public:
 protected:
 	bool canWithdraw(Account* account, int amount)
 	{
-		if (totalCash > amount && account->getBalance() > amount)
+		if (totalCash >= amount && account->getBalance() >= amount)
 		{
 			return true;
 		}

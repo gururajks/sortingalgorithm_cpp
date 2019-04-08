@@ -5,7 +5,50 @@
 #include <iostream>
 #include "Common.h"
 
-#define BUILDER
+#define SMART_PTR
+
+
+#ifdef SMART_PTR
+#include "SmartPointers.h"
+
+
+void checkMethod(unique_ptr<Base> b)
+{
+	
+	b->func();
+
+}
+
+
+int main()
+{
+	Base* a = new Derived();
+	
+	a->func();
+	
+	delete a;
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif
+
 
 
 #ifdef FACTORY

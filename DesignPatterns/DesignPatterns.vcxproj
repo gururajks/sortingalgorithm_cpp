@@ -160,6 +160,7 @@
     <ClInclude Include="DocumentObserver.h" />
     <ClInclude Include="DocumentState.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="SmartPointers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesignPatterns.cpp" />
