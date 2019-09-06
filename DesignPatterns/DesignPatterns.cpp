@@ -33,24 +33,6 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
-
-
-
 #ifdef FACTORY
 
 #include "DocumentFactory.h"

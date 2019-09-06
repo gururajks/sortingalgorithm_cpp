@@ -9,7 +9,20 @@
 #include "List.h"
 #include "Tree.h"
 #include "List/CircularList.cpp"
+#include <bits/stdc++.h>
 
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+#include<string>
+#include<iostream>
+using namespace std;
+
+
+ 
 
 List<int>* createList(const vector<int>& arrayList)
 {
